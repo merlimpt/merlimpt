@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Objetivo 5 — Supply Chain | Telecomunicações</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="logo">NIS2 Telecom</a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="governanca.html">Governança</a></li>
+          <li><a href="gestao-risco.html">Gestão de Risco</a></li>
+          <li><a href="continuidade.html">Continuidade</a></li>
+          <li><a href="incidentes.html">Incidentes</a></li>
+          <li><a href="supply-chain.html">Supply Chain</a></li>
+          <li><a href="controlos-tecnicos.html">Controlos Técnicos</a></li>
+          <li><a href="cultura.html">Cultura</a></li>
+          <li><a href="auditoria.html">Auditoria</a></li>
+          <li><a href="integracao.html">Integração</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <span class="badge">Objetivo 5 · Art. 21(2)(d) NIS2</span>
+    <h1>Segurança da cadeia de fornecimento</h1>
+    <p class="subtitle">Reduzir risco introduzido por fornecedores de rede, cloud, software e MSSPs — área crítica em telecom.</p>
+
+    <h2>Classificação de fornecedores</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Tier</th>
+          <th>Tipo de fornecedor</th>
+          <th>Exemplos</th>
+          <th>Requisitos</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Tier 1 — Crítico</strong></td>
+          <td>Infraestrutura de rede core</td>
+          <td>Ericsson, Nokia, Huawei, Cisco</td>
+          <td>Due diligence completa, auditoria anual, SLA patch, cláusulas NIS2</td>
+        </tr>
+        <tr>
+          <td><strong>Tier 1 — Crítico</strong></td>
+          <td>Cloud / Hyperscaler</td>
+          <td>AWS, Azure, GCP</td>
+          <td>Certificações (ISO 27001, SOC 2), DPA, notificação de incidentes</td>
+        </tr>
+        <tr>
+          <td><strong>Tier 2 — Alto</strong></td>
+          <td>MSSP / SOC externo</td>
+          <td>Fornecedores de SOC 24/7</td>
+          <td>SLA resposta, acesso restrito, sessões gravadas</td>
+        </tr>
+        <tr>
+          <td><strong>Tier 2 — Alto</strong></td>
+          <td>Integradores / OSS/BSS</td>
+          <td>Fornecedores de billing, CRM</td>
+          <td>Avaliação de segurança, pentest, cláusulas de confidencialidade</td>
+        </tr>
+        <tr>
+          <td><strong>Tier 3 — Médio</strong></td>
+          <td>Suporte e manutenção</td>
+          <td>Field services, NOC terceiros</td>
+          <td>NDA, acesso temporário, MFA obrigatório</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Cláusulas contratuais NIS2</h2>
+    <p>Todos os contratos Tier 1 e Tier 2 devem incluir:</p>
+    <ul>
+      <li><strong>Direito de auditoria</strong> — acesso a relatórios de segurança e possibilidade de auditoria in situ</li>
+      <li><strong>Notificação de incidentes</strong> — obrigação de notificar em ≤24h incidentes que afetem os nossos sistemas</li>
+      <li><strong>SLAs de patching</strong> — vulnerabilidades críticas corrigidas em ≤72h, altas em ≤30 dias</li>
+      <li><strong>Requisitos MFA</strong> — autenticação multifator para todos os acessos remotos de fornecedores</li>
+      <li><strong>Encriptação</strong> — dados em trânsito (TLS 1.2+) e em repouso</li>
+      <li><strong>Subcontratação</strong> — aprovação prévia para subcontratantes com acesso a sistemas críticos</li>
+      <li><strong>Exit clause</strong> — procedimentos de transição e devolução de dados em caso de rescisão</li>
+    </ul>
+
+    <h2>Gestão de acessos de fornecedores</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Controlos</th>
+          <th>Descrição</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Jump servers</td>
+          <td>Todo acesso remoto a produção via bastion hosts com sessão gravada</td>
+        </tr>
+        <tr>
+          <td>Menor privilégio</td>
+          <td>Acessos limitados ao estritamente necessário, revistos trimestralmente</td>
+        </tr>
+        <tr>
+          <td>Acessos temporários</td>
+          <td>Just-in-time access com aprovação e expiração automática</td>
+        </tr>
+        <tr>
+          <td>Inventário</td>
+          <td>Registo atualizado de todas as contas de fornecedores com owner interno</td>
+        </tr>
+        <tr>
+          <td>Monitorização</td>
+          <td>Alertas para acessos fora de horário ou padrões anómalos</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Monitorização de vulnerabilidades</h2>
+    <ul>
+      <li>Subscrição a advisories de fornecedores de equipamentos de rede (ERICSSON-PSIRT, Nokia TSA, etc.)</li>
+      <li>Scanning regular de firmware e configurações de equipamentos em produção</li>
+      <li>Processo de patch management com janelas de manutenção aprovadas</li>
+      <li>Inventário de versões de software em todos os equipamentos críticos</li>
+    </ul>
+
+    <h2>Plano de saída (exit strategy)</h2>
+    <p>Para cada fornecedor Tier 1 com dependência single-vendor:</p>
+    <ul>
+      <li>Identificar alternativas viáveis e custo de migração</li>
+      <li>Documentar procedimentos de exportação de dados e configurações</li>
+      <li>Manter competências internas mínimas para operar em modo degradado</li>
+      <li>Testar procedimentos de transição em exercícios anuais</li>
+    </ul>
+
+    <h2>Indicadores de sucesso</h2>
+    <ul class="checklist">
+      <li>100% fornecedores Tier 1 e Tier 2 com avaliação de segurança concluída</li>
+      <li>Contratos atualizados com cláusulas NIS2</li>
+      <li>Inventário de acessos de terceiros revisto trimestralmente</li>
+      <li>Zero acessos de fornecedores sem MFA ou sem owner interno</li>
+      <li>Exit strategy documentada para fornecedores single-vendor críticos</li>
+    </ul>
+
+    <h2>Documentos de apoio</h2>
+    <a href="templates/checklist-fornecedores.html" class="template-link">Template: Checklist de Avaliação de Fornecedores</a>
+  </main>
+
+  <footer>
+    <p><a href="index.html">← Voltar ao início</a></p>
+  </footer>
+  <script src="js/nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Template — Inventário de Ativos Críticos</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <a href="../index.html" class="logo">NIS2 Telecom</a>
+      <nav>
+        <ul>
+          <li><a href="../index.html">Início</a></li>
+          <li><a href="../gestao-risco.html">Gestão de Risco</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <span class="badge">Template · Gestão de Risco</span>
+    <h1>Inventário de Ativos Críticos Telecom</h1>
+    <p class="subtitle">Registo de ativos para avaliação de risco all-hazards (Art. 21 NIS2)</p>
+
+    <div class="meta-box">
+      <strong>Instruções</strong>
+      Preencher uma linha por ativo ou grupo lógico. Atualizar trimestralmente ou após alterações significativas.
+      Criticidade: Crítica (C), Alta (A), Média (M).
+    </div>
+
+    <h2>Identificação</h2>
+    <table>
+      <tbody>
+        <tr><td><strong>Entidade</strong></td><td>[___]</td></tr>
+        <tr><td><strong>Responsável pelo inventário</strong></td><td>[___]</td></tr>
+        <tr><td><strong>Data da última atualização</strong></td><td>[___]</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Core Network</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Ativo</th>
+          <th>Localização</th>
+          <th>Owner</th>
+          <th>Criticidade</th>
+          <th>CIA</th>
+          <th>Última revisão</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>CN-001</td><td>[MSC / MME]</td><td>[DC ___]</td><td>[___]</td><td>C</td><td>C/I/A</td><td>[___]</td></tr>
+        <tr><td>CN-002</td><td>[HLR / HSS]</td><td>[DC ___]</td><td>[___]</td><td>C</td><td>C/I/A</td><td>[___]</td></tr>
+        <tr><td>CN-003</td><td>[IMS Core]</td><td>[DC ___]</td><td>[___]</td><td>C</td><td>C/I/A</td><td>[___]</td></tr>
+        <tr><td>CN-004</td><td>[5G AMF/SMF/UPF]</td><td>[NFVI ___]</td><td>[___]</td><td>C</td><td>C/I/A</td><td>[___]</td></tr>
+        <tr><td>CN-005</td><td>[STP / DRA]</td><td>[DC ___]</td><td>[___]</td><td>C</td><td>C/I/A</td><td>[___]</td></tr>
+      </tbody>
+    </table>
+
+    <h2>RAN e Transporte</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Ativo</th>
+          <th>Localização</th>
+          <th>Owner</th>
+          <th>Criticidade</th>
+          <th>CIA</th>
+          <th>Última revisão</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>RAN-001</td><td>[gNodeB cluster]</td><td>[Região ___]</td><td>[___]</td><td>C</td><td>A</td><td>[___]</td></tr>
+        <tr><td>RAN-002</td><td>[Backhaul MPLS]</td><td>[___]</td><td>[___]</td><td>C</td><td>A</td><td>[___]</td></tr>
+        <tr><td>RAN-003</td><td>[Controlador RAN]</td><td>[DC ___]</td><td>[___]</td><td>C</td><td>C/I/A</td><td>[___]</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Sinalização e Interconexão</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Ativo</th>
+          <th>Localização</th>
+          <th>Owner</th>
+          <th>Criticidade</th>
+          <th>CIA</th>
+          <th>Última revisão</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>SIG-001</td><td>[SS7 Gateway]</td><td>[DC ___]</td><td>[___]</td><td>C</td><td>C/I/A</td><td>[___]</td></tr>
+        <tr><td>SIG-002</td><td>[Diameter Edge]</td><td>[DC ___]</td><td>[___]</td><td>C</td><td>C/I/A</td><td>[___]</td></tr>
+        <tr><td>SIG-003</td><td>[BGP Routers]</td><td>[___]</td><td>[___]</td><td>C</td><td>A/I</td><td>[___]</td></tr>
+      </tbody>
+    </table>
+
+    <h2>BSS / OSS</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Ativo</th>
+          <th>Localização</th>
+          <th>Owner</th>
+          <th>Criticidade</th>
+          <th>CIA</th>
+          <th>Última revisão</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>BSS-001</td><td>[Billing System]</td><td>[___]</td><td>[___]</td><td>A</td><td>C/I/A</td><td>[___]</td></tr>
+        <tr><td>BSS-002</td><td>[CRM]</td><td>[___]</td><td>[___]</td><td>A</td><td>C/I</td><td>[___]</td></tr>
+        <tr><td>OSS-001</td><td>[Provisioning]</td><td>[___]</td><td>[___]</td><td>A</td><td>C/I/A</td><td>[___]</td></tr>
+        <tr><td>OSS-002</td><td>[Mediation]</td><td>[___]</td><td>[___]</td><td>A</td><td>I/A</td><td>[___]</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Infraestrutura e Operações</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Ativo</th>
+          <th>Localização</th>
+          <th>Owner</th>
+          <th>Criticidade</th>
+          <th>CIA</th>
+          <th>Última revisão</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>INF-001</td><td>[Data Center Primário]</td><td>[___]</td><td>[___]</td><td>C</td><td>A</td><td>[___]</td></tr>
+        <tr><td>INF-002</td><td>[Data Center Secundário]</td><td>[___]</td><td>[___]</td><td>C</td><td>A</td><td>[___]</td></tr>
+        <tr><td>INF-003</td><td>[DNS Autoritativo]</td><td>[___]</td><td>[___]</td><td>C</td><td>A/I</td><td>[___]</td></tr>
+        <tr><td>INF-004</td><td>[NOC / SOC]</td><td>[___]</td><td>[___]</td><td>C</td><td>A</td><td>[___]</td></tr>
+        <tr><td>INF-005</td><td>[SIEM]</td><td>[___]</td><td>[___]</td><td>A</td><td>C/I/A</td><td>[___]</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Interfaces Digitais</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Ativo</th>
+          <th>Localização</th>
+          <th>Owner</th>
+          <th>Criticidade</th>
+          <th>CIA</th>
+          <th>Última revisão</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>DIG-001</td><td>[Portal Cliente]</td><td>[Cloud ___]</td><td>[___]</td><td>A</td><td>C/I/A</td><td>[___]</td></tr>
+        <tr><td>DIG-002</td><td>[API Gateway]</td><td>[___]</td><td>[___]</td><td>A</td><td>C/I/A</td><td>[___]</td></tr>
+        <tr><td>DIG-003</td><td>[App Móvel Backend]</td><td>[___]</td><td>[___]</td><td>A</td><td>C/I</td><td>[___]</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Resumo</h2>
+    <table>
+      <tbody>
+        <tr><td><strong>Total de ativos críticos (C)</strong></td><td>[___]</td></tr>
+        <tr><td><strong>Total de ativos alta (A)</strong></td><td>[___]</td></tr>
+        <tr><td><strong>% com owner designado</strong></td><td>[___]%</td></tr>
+        <tr><td><strong>% revistos nos últimos 90 dias</strong></td><td>[___]%</td></tr>
+      </tbody>
+    </table>
+  </main>
+
+  <footer>
+    <p><a href="../gestao-risco.html">← Voltar a Gestão de Risco</a></p>
+  </footer>
+</body>
+</html>

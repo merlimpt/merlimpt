@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Template — Checklist de Fornecedores</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <a href="../index.html" class="logo">NIS2 Telecom</a>
+      <nav>
+        <ul>
+          <li><a href="../index.html">Início</a></li>
+          <li><a href="../supply-chain.html">Supply Chain</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <span class="badge">Template · Supply Chain</span>
+    <h1>Checklist de Avaliação de Segurança de Fornecedores</h1>
+    <p class="subtitle">Due diligence para fornecedores Tier 1 e Tier 2 (Art. 21(2)(d) NIS2)</p>
+
+    <h2>Identificação do fornecedor</h2>
+    <table>
+      <tbody>
+        <tr><td><strong>Fornecedor</strong></td><td>[___]</td></tr>
+        <tr><td><strong>Tipo</strong></td><td>[ ] Tier 1 Crítico  [ ] Tier 2 Alto  [ ] Tier 3 Médio</td></tr>
+        <tr><td><strong>Serviço prestado</strong></td><td>[___]</td></tr>
+        <tr><td><strong>Sistemas com acesso</strong></td><td>[___]</td></tr>
+        <tr><td><strong>Owner interno</strong></td><td>[___]</td></tr>
+        <tr><td><strong>Data da avaliação</strong></td><td>[___]</td></tr>
+        <tr><td><strong>Avaliador</strong></td><td>[___]</td></tr>
+      </tbody>
+    </table>
+
+    <h2>1. Certificações e conformidade</h2>
+    <ul class="checklist">
+      <li>ISO 27001 (ou equivalente) válido — Certificado nº [___], validade [___]</li>
+      <li>SOC 2 Type II (se cloud/MSSP) — Relatório de [___]</li>
+      <li>Conformidade com requisitos sectoriais (ETSI, 3GPP, se aplicável)</li>
+      <li>Política de segurança da informação documentada e partilhada</li>
+      <li>Programa de gestão de vulnerabilidades ativo</li>
+    </ul>
+
+    <h2>2. Cláusulas contratuais NIS2</h2>
+    <ul class="checklist">
+      <li>Direito de auditoria incluído no contrato</li>
+      <li>Obrigação de notificação de incidentes em ≤24h</li>
+      <li>SLA de patching: crítico ≤72h, alto ≤30 dias</li>
+      <li>Requisito de MFA para acessos remotos</li>
+      <li>Encriptação em trânsito (TLS 1.2+) e em repouso</li>
+      <li>Aprovação prévia para subcontratação com acesso a sistemas críticos</li>
+      <li>Cláusula de exit / transição documentada</li>
+      <li>DPA (Acordo de Tratamento de Dados) se processa dados pessoais</li>
+    </ul>
+
+    <h2>3. Gestão de acessos</h2>
+    <ul class="checklist">
+      <li>Acessos limitados ao estritamente necessário (menor privilégio)</li>
+      <li>Acesso via jump server / bastion com sessão gravada</li>
+      <li>Contas individuais (sem credenciais partilhadas)</li>
+      <li>MFA obrigatório para todos os acessos remotos</li>
+      <li>Just-in-time access implementado (se aplicável)</li>
+      <li>Inventário de contas de fornecedor atualizado</li>
+      <li>Revisão trimestral de acessos documentada</li>
+    </ul>
+
+    <h2>4. Resposta a incidentes</h2>
+    <ul class="checklist">
+      <li>Processo de notificação de incidentes documentado</li>
+      <li>Contacto de segurança 24/7 identificado</li>
+      <li>Histórico de incidentes nos últimos 24 meses revisto</li>
+      <li>Plano de continuidade do fornecedor avaliado</li>
+      <li>Participação em exercícios de crise (se Tier 1)</li>
+    </ul>
+
+    <h2>5. Segurança técnica (se equipamentos de rede)</h2>
+    <ul class="checklist">
+      <li>Processo de segurança no desenvolvimento (SDL/SSDL)</li>
+      <li>Advisories de segurança subscritos (PSIRT)</li>
+      <li>Inventário de versões de firmware/software em produção</li>
+      <li>Hardening guides disponíveis e aplicados</li>
+      <li>Testes de penetração regulares pelo fornecedor</li>
+    </ul>
+
+    <h2>6. Localização e soberania de dados</h2>
+    <ul class="checklist">
+      <li>Localização de dados e processamento identificada</li>
+      <li>Conformidade com requisitos de residência de dados (se aplicável)</li>
+      <li>Avaliação de risco geopolítico (toolbox 5G UE, se relevante)</li>
+    </ul>
+
+    <h2>Resultado da avaliação</h2>
+    <table>
+      <tbody>
+        <tr><td><strong>Score total</strong></td><td>[___] / [___] itens conformes</td></tr>
+        <tr><td><strong>Classificação de risco</strong></td><td>[ ] Baixo  [ ] Médio  [ ] Alto  [ ] Inaceitável</td></tr>
+        <tr><td><strong>Decisão</strong></td><td>[ ] Aprovado  [ ] Aprovado com condições  [ ] Rejeitado</td></tr>
+        <tr><td><strong>Condições / ações requeridas</strong></td><td>[___]</td></tr>
+        <tr><td><strong>Próxima revisão</strong></td><td>[___]</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Aprovações</h2>
+    <table>
+      <tbody>
+        <tr><td><strong>Avaliado por (CISO/Security)</strong></td><td>[___] — [Data]</td></tr>
+        <tr><td><strong>Revisto por (Procurement)</strong></td><td>[___] — [Data]</td></tr>
+        <tr><td><strong>Aprovado por (Owner interno)</strong></td><td>[___] — [Data]</td></tr>
+      </tbody>
+    </table>
+  </main>
+
+  <footer>
+    <p><a href="../supply-chain.html">← Voltar a Supply Chain</a></p>
+  </footer>
+</body>
+</html>

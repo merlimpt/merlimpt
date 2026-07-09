@@ -1,2 +1,190 @@
-<html>
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Objetivos estratégicos NIS2 para empresas de telecomunicações — governança, risco, incidentes, supply chain e conformidade.">
+  <title>Objetivos Estratégicos NIS2 — Telecomunicações</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script type="module">
+    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
+    mermaid.initialize({ startOnLoad: true, theme: "dark" });
+  </script>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="logo">NIS2 Telecom</a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="governanca.html">Governança</a></li>
+          <li><a href="gestao-risco.html">Gestão de Risco</a></li>
+          <li><a href="continuidade.html">Continuidade</a></li>
+          <li><a href="incidentes.html">Incidentes</a></li>
+          <li><a href="supply-chain.html">Supply Chain</a></li>
+          <li><a href="controlos-tecnicos.html">Controlos Técnicos</a></li>
+          <li><a href="cultura.html">Cultura</a></li>
+          <li><a href="auditoria.html">Auditoria</a></li>
+          <li><a href="integracao.html">Integração</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <span class="badge">Diretiva (UE) 2022/2555 · Entidade Essencial</span>
+      <h1>Objetivos Estratégicos NIS2 para Empresa de Telecomunicações</h1>
+      <p class="subtitle">
+        Framework estratégico de conformidade e resiliência cibernética para operadores de redes públicas
+        de comunicações eletrónicas e serviços disponíveis ao público.
+      </p>
+    </section>
+
+    <div class="meta-box">
+      <strong>Enquadramento regulatório</strong>
+      Operadores de telecomunicações estão no Anexo I da Diretiva NIS2 e são classificados como
+      <strong>entidades essenciais</strong> ao atingirem o limiar de empresa de dimensão média.
+      Implica supervisão reforçada, responsabilidade da administração (Art. 20), 10 domínios mínimos
+      de segurança (Art. 21) e notificação de incidentes em 24h / 72h / 1 mês (Art. 23).
+    </div>
+
+    <div class="mermaid-container">
+      <pre class="mermaid">
+flowchart TB
+    subgraph governance [Governança]
+        Board[Conselho_de_Administração]
+        CISO[CISO_CIO]
+        RiskCom[Comité_Risco_Ciber]
+    end
+    subgraph operations [Operações_Críticas]
+        Core[Rede_Core_e_RAN]
+        BSS[BSS_OSS_Billing]
+        DC[Data_Centers_IXP_DNS]
+    end
+    subgraph compliance [Conformidade_NIS2]
+        RiskMgmt[Gestão_Riscos]
+        IncidentResp[Resposta_Incidentes]
+        SupplyChain[Cadeia_Fornecimento]
+        BCP[Continuidade_Negócio]
+    end
+    Board --> CISO
+    CISO --> RiskCom
+    RiskCom --> RiskMgmt
+    RiskMgmt --> operations
+    IncidentResp --> CSIRT[CSIRT_Nacional]
+    SupplyChain --> vendors[Fornecedores_Rede_5G_Cloud]
+    BCP --> operations
+      </pre>
+    </div>
+
+    <h2>Nove objetivos estratégicos</h2>
+    <div class="card-grid">
+      <article class="card">
+        <h3>1. Governança e responsabilização executiva</h3>
+        <p>Cibersegurança como decisão de topo de governo, com aprovação formal pelo conselho de administração.</p>
+        <a href="governanca.html" class="link">Ver objetivo →</a>
+      </article>
+      <article class="card">
+        <h3>2. Gestão de risco integrada</h3>
+        <p>Programa all-hazards cobrindo TI, OT, core telecom e ameaças físicas.</p>
+        <a href="gestao-risco.html" class="link">Ver objetivo →</a>
+      </article>
+      <article class="card">
+        <h3>3. Resiliência operacional</h3>
+        <p>Continuidade de serviço face a incidentes cibernéticos e físicos.</p>
+        <a href="continuidade.html" class="link">Ver objetivo →</a>
+      </article>
+      <article class="card">
+        <h3>4. Deteção e resposta a incidentes</h3>
+        <p>SOC 24/7, playbooks e notificação regulatória nos prazos legais.</p>
+        <a href="incidentes.html" class="link">Ver objetivo →</a>
+      </article>
+      <article class="card">
+        <h3>5. Segurança da cadeia de fornecimento</h3>
+        <p>Due diligence e controlos contratuais para fornecedores críticos de rede e cloud.</p>
+        <a href="supply-chain.html" class="link">Ver objetivo →</a>
+      </article>
+      <article class="card">
+        <h3>6. Hardening técnico</h3>
+        <p>MFA, IAM, encriptação, segmentação e higiene cibernética.</p>
+        <a href="controlos-tecnicos.html" class="link">Ver objetivo →</a>
+      </article>
+      <article class="card">
+        <h3>7. Cultura e competências</h3>
+        <p>Formação contínua e redução do fator humano como vetor de ataque.</p>
+        <a href="cultura.html" class="link">Ver objetivo →</a>
+      </article>
+      <article class="card">
+        <h3>8. Avaliação de eficácia</h3>
+        <p>Auditorias, pentests e melhoria contínua de maturidade NIS2.</p>
+        <a href="auditoria.html" class="link">Ver objetivo →</a>
+      </article>
+      <article class="card">
+        <h3>9. Integração regulatória</h3>
+        <p>Coerência entre NIS2, RGPD, ePrivacy e regulamento sectorial.</p>
+        <a href="integracao.html" class="link">Ver objetivo →</a>
+      </article>
+    </div>
+
+    <h2>Roadmap de implementação</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Fase</th>
+          <th>Foco</th>
+          <th>Entregáveis principais</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Fase 1 — Fundação (0–3 meses)</strong></td>
+          <td>Governança, inventário, gap analysis</td>
+          <td>Política aprovada pelo CA; inventário de ativos; matriz de gaps NIS2</td>
+        </tr>
+        <tr>
+          <td><strong>Fase 2 — Controlos críticos (3–9 meses)</strong></td>
+          <td>IAM/MFA, SOC, BCP/DR, supply chain</td>
+          <td>MFA implementado; playbooks de incidente; contratos fornecedores atualizados</td>
+        </tr>
+        <tr>
+          <td><strong>Fase 3 — Maturidade (9–18 meses)</strong></td>
+          <td>Testes, auditorias, cultura</td>
+          <td>Exercícios de crise; pentests; programa de formação; relatório de conformidade</td>
+        </tr>
+        <tr>
+          <td><strong>Fase 4 — Otimização (contínuo)</strong></td>
+          <td>Melhoria contínua, threat intel</td>
+          <td>Revisões anuais de risco; evolução de KPIs; preparação para supervisão</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Priorização sectorial</h2>
+    <ol class="priorities">
+      <li><strong>Disponibilidade da rede core e serviços ao cliente</strong> — impacto massivo, obrigação de serviço universal</li>
+      <li><strong>Resposta a incidentes e notificação regulatória</strong> — exposição legal direta</li>
+      <li><strong>Segurança de fornecedores de infraestrutura de rede</strong> — dependência tecnológica elevada</li>
+      <li><strong>Proteção de sinalização e interfaces expostas</strong> — SS7, Diameter, APIs</li>
+      <li><strong>Governança e accountability da administração</strong> — requisito legal explícito (Art. 20)</li>
+    </ol>
+
+    <h2>Templates e documentos de apoio</h2>
+    <p>Documentos operacionais para implementação dos objetivos:</p>
+    <div>
+      <a href="templates/politica-risco-cibernetico.html" class="template-link">Política de Risco Cibernético</a>
+      <a href="templates/inventario-ativos-criticos.html" class="template-link">Inventário de Ativos Críticos</a>
+      <a href="templates/processo-notificacao-incidentes.html" class="template-link">Processo de Notificação de Incidentes</a>
+      <a href="templates/checklist-fornecedores.html" class="template-link">Checklist Fornecedores</a>
+      <a href="templates/plano-bcp-dr.html" class="template-link">Plano BCP/DR</a>
+      <a href="templates/matriz-conformidade.html" class="template-link">Matriz de Conformidade</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>Framework estratégico NIS2 para telecomunicações · Baseado na Diretiva (UE) 2022/2555</p>
+  </footer>
+  <script src="js/nav.js"></script>
+</body>
 </html>

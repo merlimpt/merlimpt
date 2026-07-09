@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Objetivo 8 — Auditoria | Telecomunicações</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="logo">NIS2 Telecom</a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="governanca.html">Governança</a></li>
+          <li><a href="gestao-risco.html">Gestão de Risco</a></li>
+          <li><a href="continuidade.html">Continuidade</a></li>
+          <li><a href="incidentes.html">Incidentes</a></li>
+          <li><a href="supply-chain.html">Supply Chain</a></li>
+          <li><a href="controlos-tecnicos.html">Controlos Técnicos</a></li>
+          <li><a href="cultura.html">Cultura</a></li>
+          <li><a href="auditoria.html">Auditoria</a></li>
+          <li><a href="integracao.html">Integração</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <span class="badge">Objetivo 8 · Art. 21(2)(j) NIS2</span>
+    <h1>Avaliação de eficácia e melhoria contínua</h1>
+    <p class="subtitle">Demonstrar conformidade sustentada e preparação para auditorias de supervisão.</p>
+
+    <h2>Programa de auditoria interna — 10 domínios Art. 21</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Domínio NIS2</th>
+          <th>Âmbito de auditoria</th>
+          <th>Frequência</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Políticas de análise de risco</td>
+          <td>Metodologia, inventário, plano de tratamento</td>
+          <td>Anual</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Tratamento de incidentes</td>
+          <td>Playbooks, prazos de notificação, exercícios</td>
+          <td>Anual</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Continuidade e backup</td>
+          <td>BCP/DR, testes, RTO/RPO</td>
+          <td>Anual</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Segurança da cadeia de fornecimento</td>
+          <td>Contratos, due diligence, acessos terceiros</td>
+          <td>Anual</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>Segurança em aquisição/desenvolvimento/manutenção</td>
+          <td>SDLC, change management, hardening</td>
+          <td>Anual</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>Políticas de eficácia de medidas</td>
+          <td>KPIs, dashboards, revisões</td>
+          <td>Anual</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>Higiene cibernética e formação</td>
+          <td>Awareness, phishing, certificações</td>
+          <td>Anual</td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>Criptografia</td>
+          <td>TLS, encriptação em repouso, gestão de chaves</td>
+          <td>Anual</td>
+        </tr>
+        <tr>
+          <td>9</td>
+          <td>Segurança de RH e controlo de acessos</td>
+          <td>IAM, MFA, revisão de privilégios</td>
+          <td>Anual</td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td>MFA e comunicações seguras</td>
+          <td>Cobertura MFA, canais de crise</td>
+          <td>Anual</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Testes de penetração e red team</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Teste</th>
+          <th>Âmbito</th>
+          <th>Frequência</th>
+          <th>Fornecedor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Pentest externo</td>
+          <td>Portais cliente, APIs públicas, infraestrutura exposta</td>
+          <td>Anual</td>
+          <td>Externo independente</td>
+        </tr>
+        <tr>
+          <td>Pentest interno</td>
+          <td>Segmentos BSS/OSS, Active Directory</td>
+          <td>Anual</td>
+          <td>Externo independente</td>
+        </tr>
+        <tr>
+          <td>Red team</td>
+          <td>Simulação de APT contra core e BSS</td>
+          <td>Bienal</td>
+          <td>Externo especializado</td>
+        </tr>
+        <tr>
+          <td>Teste de sinalização</td>
+          <td>SS7, Diameter, interfaces de interconexão</td>
+          <td>Anual</td>
+          <td>Especialista telecom</td>
+        </tr>
+        <tr>
+          <td>Social engineering</td>
+          <td>Phishing, vishing, físico</td>
+          <td>Semestral</td>
+          <td>Interno ou externo</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Dashboard de maturidade NIS2</h2>
+    <div class="kpi-grid">
+      <div class="kpi">
+        <div class="value">Nível 1-5</div>
+        <div class="label">Maturidade por domínio</div>
+      </div>
+      <div class="kpi">
+        <div class="value">Trimestral</div>
+        <div class="label">Atualização de KPIs</div>
+      </div>
+      <div class="kpi">
+        <div class="value">Anual</div>
+        <div class="label">Relatório ao CA</div>
+      </div>
+    </div>
+
+    <h3>Escala de maturidade</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Nível</th>
+          <th>Designação</th>
+          <th>Descrição</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Inicial</td>
+          <td>Processos ad-hoc, sem documentação formal</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Repetível</td>
+          <td>Políticas documentadas, implementação parcial</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Definido</td>
+          <td>Processos standardizados e comunicados</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Gerido</td>
+          <td>Métricas, monitorização, melhoria contínua</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>Otimizado</td>
+          <td>Inovação, automação, benchmark sectorial</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Mapeamento de frameworks</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Framework</th>
+          <th>Âmbito</th>
+          <th>Relação com NIS2</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>ISO 27001</td>
+          <td>SGSI completo</td>
+          <td>Base sólida; NIS2 adiciona governança CA e notificação</td>
+        </tr>
+        <tr>
+          <td>NIST CSF</td>
+          <td>Identify, Protect, Detect, Respond, Recover</td>
+          <td>Mapeamento direto para domínios Art. 21</td>
+        </tr>
+        <tr>
+          <td>CIS Controls</td>
+          <td>Controlos técnicos prioritários</td>
+          <td>Implementação de higiene cibernética</td>
+        </tr>
+        <tr>
+          <td>ETSI EN 303 645</td>
+          <td>Produtos conectados</td>
+          <td>Relevante para CPE e IoT</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Preparação para supervisão</h2>
+    <ul>
+      <li>Manter evidências de conformidade organizadas e acessíveis</li>
+      <li>Designar ponto de contacto para inspeções da autoridade competente</li>
+      <li>Realizar autoavaliação anual antes de auditorias externas</li>
+      <li>Plano de remediação com prazos para todos os findings</li>
+      <li>Relatório de conformidade NIS2 anual apresentado ao CA</li>
+    </ul>
+
+    <h2>Indicadores de sucesso</h2>
+    <ul class="checklist">
+      <li>Auditoria interna anual concluída para os 10 domínios Art. 21</li>
+      <li>Pentest externo anual sem findings críticos em aberto</li>
+      <li>Plano de remediação com 100% dos findings críticos resolvidos</li>
+      <li>Redução anual do número de findings em auditorias</li>
+      <li>Relatório de conformidade NIS2 apresentado ao CA</li>
+      <li>Maturidade média ≥ Nível 3 em todos os domínios</li>
+    </ul>
+
+    <h2>Documentos de apoio</h2>
+    <a href="templates/matriz-conformidade.html" class="template-link">Template: Matriz de Conformidade</a>
+  </main>
+
+  <footer>
+    <p><a href="index.html">← Voltar ao início</a></p>
+  </footer>
+  <script src="js/nav.js"></script>
+</body>
+</html>

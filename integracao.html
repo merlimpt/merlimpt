@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Objetivo 9 — Integração Regulatória | Telecomunicações</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="logo">NIS2 Telecom</a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="governanca.html">Governança</a></li>
+          <li><a href="gestao-risco.html">Gestão de Risco</a></li>
+          <li><a href="continuidade.html">Continuidade</a></li>
+          <li><a href="incidentes.html">Incidentes</a></li>
+          <li><a href="supply-chain.html">Supply Chain</a></li>
+          <li><a href="controlos-tecnicos.html">Controlos Técnicos</a></li>
+          <li><a href="cultura.html">Cultura</a></li>
+          <li><a href="auditoria.html">Auditoria</a></li>
+          <li><a href="integracao.html">Integração</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <span class="badge">Objetivo 9 · Integração regulatória</span>
+    <h1>Integração regulatória e interoperabilidade</h1>
+    <p class="subtitle">Evitar duplicação de esforços e garantir coerência entre NIS2 e outros regimes aplicáveis a telecom.</p>
+
+    <h2>Matriz de regimes regulatórios</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Regime</th>
+          <th>Âmbito</th>
+          <th>Sobreposição com NIS2</th>
+          <th>Autoridade</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>NIS2</strong></td>
+          <td>Segurança de rede e sistemas de informação</td>
+          <td>Base</td>
+          <td>Autoridade NIS2 nacional</td>
+        </tr>
+        <tr>
+          <td><strong>RGPD</strong></td>
+          <td>Proteção de dados pessoais de subscritores</td>
+          <td>Incidentes com dados pessoais, DPO</td>
+          <td>CNPD</td>
+        </tr>
+        <tr>
+          <td><strong>ePrivacy</strong></td>
+          <td>Confidencialidade das comunicações</td>
+          <td>Metadados, interceptação</td>
+          <td>ANACOM / CNPD</td>
+        </tr>
+        <tr>
+          <td><strong>Regulamento Telecom nacional</strong></td>
+          <td>Licenciamento, QoS, interconexão</td>
+          <td>Disponibilidade, reporte de incidentes</td>
+          <td>ANACOM</td>
+        </tr>
+        <tr>
+          <td><strong>DORA</strong></td>
+          <td>Resiliência operacional digital (se grupo financeiro)</td>
+          <td>Gestão de risco ICT, incidentes</td>
+          <td>Banco de Portugal / ECB</td>
+        </tr>
+        <tr>
+          <td><strong>CRA</strong></td>
+          <td>Ciberresiliência de produtos com elementos digitais</td>
+          <td>CPE, routers, dispositivos IoT</td>
+          <td>Autoridade de mercado</td>
+        </tr>
+        <tr>
+          <td><strong>BEREC / ENISA 5G</strong></td>
+          <td>Segurança de redes 5G, toolbox UE</td>
+          <td>Fornecedores de risco, medidas técnicas</td>
+          <td>BEREC, ENISA</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Pontos de contacto regulatórios</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Autoridade</th>
+          <th>Função</th>
+          <th>Contacto interno</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Autoridade NIS2 nacional</td>
+          <td>Supervisão NIS2, notificação de incidentes</td>
+          <td>Ponto de contacto NIS2 (CISO)</td>
+        </tr>
+        <tr>
+          <td>ANACOM</td>
+          <td>Regulador sectorial telecom</td>
+          <td>Regulatory Affairs</td>
+        </tr>
+        <tr>
+          <td>CSIRT nacional</td>
+          <td>Resposta a incidentes, threat intel</td>
+          <td>SOC Lead</td>
+        </tr>
+        <tr>
+          <td>CNPD</td>
+          <td>Proteção de dados</td>
+          <td>DPO</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Integração de processos</h2>
+    <div class="meta-box success">
+      <strong>Processo unificado de gestão de incidentes</strong>
+      Um único processo de resposta a incidentes deve cobrir notificações NIS2, RGPD (72h para breach de dados pessoais),
+      regulador telecom e CSIRT — com triggers automáticos baseados na classificação do incidente.
+    </div>
+
+    <h3>Fluxo de decisão de notificação</h3>
+    <ol>
+      <li>Incidente detetado → classificação inicial pelo SOC</li>
+      <li>Avaliação de impacto: serviços, utilizadores, dados pessoais</li>
+      <li>Se significativo NIS2 → alerta em 24h à autoridade NIS2 + CSIRT</li>
+      <li>Se dados pessoais afetados → avaliação DPO, notificação CNPD em 72h se aplicável</li>
+      <li>Se impacto em serviço telecom → notificação ANACOM conforme obrigações sectoriais</li>
+      <li>Relatório final NIS2 em 1 mês; documentação RGPD conforme necessário</li>
+    </ol>
+
+    <h2>Participação em comunidades de segurança</h2>
+    <ul>
+      <li><strong>ISACs sectoriais</strong> — partilha de threat intelligence com outros operadores</li>
+      <li><strong>ENISA</strong> — participação em exercícios europeus, adoção de guidelines</li>
+      <li><strong>BEREC</strong> — alinhamento com recomendações de segurança 5G</li>
+      <li><strong>Fóruns de operadores nacionais</strong> — coordenação de resposta a ameaças comuns</li>
+    </ul>
+
+    <h2>Matriz de conformidade unificada</h2>
+    <p>Documento central que mapeia controlos implementados para cada regime aplicável, evitando duplicação:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Controlo</th>
+          <th>NIS2</th>
+          <th>RGPD</th>
+          <th>ISO 27001</th>
+          <th>Evidência</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Gestão de incidentes</td>
+          <td>Art. 21(2)(b)</td>
+          <td>Art. 33</td>
+          <td>A.16</td>
+          <td>Playbooks, registos</td>
+        </tr>
+        <tr>
+          <td>Encriptação</td>
+          <td>Art. 21(2)(h)</td>
+          <td>Art. 32</td>
+          <td>A.10</td>
+          <td>Política crypto</td>
+        </tr>
+        <tr>
+          <td>Controlo de acessos</td>
+          <td>Art. 21(2)(i)</td>
+          <td>Art. 32</td>
+          <td>A.9</td>
+          <td>IAM, MFA</td>
+        </tr>
+        <tr>
+          <td>Formação</td>
+          <td>Art. 21(2)(g)</td>
+          <td>Art. 32</td>
+          <td>A.7</td>
+          <td>Registos formação</td>
+        </tr>
+        <tr>
+          <td>Supply chain</td>
+          <td>Art. 21(2)(d)</td>
+          <td>Art. 28</td>
+          <td>A.15</td>
+          <td>Contratos, avaliações</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Indicadores de sucesso</h2>
+    <ul class="checklist">
+      <li>Matriz de conformidade unificada publicada e atualizada</li>
+      <li>Zero conflitos entre políticas de diferentes regimes</li>
+      <li>Pontos de contacto registados junto de todas as autoridades aplicáveis</li>
+      <li>Processo unificado de incidentes testado em exercícios</li>
+      <li>Participação ativa em pelo menos um ISAC ou fórum sectorial</li>
+    </ul>
+
+    <h2>Documentos de apoio</h2>
+    <a href="templates/matriz-conformidade.html" class="template-link">Template: Matriz de Conformidade Unificada</a>
+  </main>
+
+  <footer>
+    <p><a href="index.html">← Voltar ao início</a></p>
+  </footer>
+  <script src="js/nav.js"></script>
+</body>
+</html>

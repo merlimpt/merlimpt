@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Objetivo 4 — Incidentes | Telecomunicações</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="logo">NIS2 Telecom</a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="governanca.html">Governança</a></li>
+          <li><a href="gestao-risco.html">Gestão de Risco</a></li>
+          <li><a href="continuidade.html">Continuidade</a></li>
+          <li><a href="incidentes.html">Incidentes</a></li>
+          <li><a href="supply-chain.html">Supply Chain</a></li>
+          <li><a href="controlos-tecnicos.html">Controlos Técnicos</a></li>
+          <li><a href="cultura.html">Cultura</a></li>
+          <li><a href="auditoria.html">Auditoria</a></li>
+          <li><a href="integracao.html">Integração</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <span class="badge">Objetivo 4 · Art. 23 NIS2</span>
+    <h1>Capacidade de deteção, resposta e notificação de incidentes</h1>
+    <p class="subtitle">Cumprir obrigações de reporte NIS2 e minimizar impacto em subscritores e serviços interdependentes.</p>
+
+    <div class="meta-box warning">
+      <strong>Prazos legais de notificação (Art. 23)</strong>
+      <ul style="margin: 0.5rem 0 0;">
+        <li><strong>24 horas</strong> — alerta inicial (early warning) após conhecimento do incidente significativo</li>
+        <li><strong>72 horas</strong> — notificação de incidente com avaliação inicial</li>
+        <li><strong>1 mês</strong> — relatório final com causa raiz e medidas corretivas</li>
+      </ul>
+    </div>
+
+    <h2>Critérios de incidente significativo</h2>
+    <p>Um incidente é significativo quando cumpre um ou mais dos seguintes critérios (conforme legislação nacional de transposição):</p>
+    <ul>
+      <li>Causa ou pode causar <strong>interrupção operacional grave</strong> ou degradação prolongada de serviços</li>
+      <li>Afeta ou pode afetar um <strong>número significativo de utilizadores</strong></li>
+      <li>Envolve <strong>acesso não autorizado</strong> a sistemas críticos ou dados sensíveis</li>
+      <li>Tem impacto em <strong>outros serviços ou entidades</strong> interdependentes</li>
+      <li>Envolve <strong>ameaça à segurança nacional</strong> ou interesse público</li>
+    </ul>
+
+    <h2>Processo de resposta a incidentes</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <h4>Fase 1 — Deteção e triagem (0–1h)</h4>
+        <p>SOC identifica alerta, classifica severidade, ativa equipa de resposta. Isolamento inicial se necessário.</p>
+      </div>
+      <div class="timeline-item">
+        <h4>Fase 2 — Contenção e análise (1–24h)</h4>
+        <p>Contenção do incidente, preservação de evidências, avaliação de significância. Se significativo: <strong>alerta inicial em 24h</strong>.</p>
+      </div>
+      <div class="timeline-item">
+        <h4>Fase 3 — Notificação detalhada (24–72h)</h4>
+        <p>Notificação à autoridade competente e CSIRT com descrição, impacto, indicadores de compromisso e medidas tomadas.</p>
+      </div>
+      <div class="timeline-item">
+        <h4>Fase 4 — Erradicação e recuperação (72h–30d)</h4>
+        <p>Remoção da ameaça, restauro de serviços, monitorização reforçada. <strong>Relatório final em 1 mês</strong>.</p>
+      </div>
+      <div class="timeline-item">
+        <h4>Fase 5 — Lições aprendidas</h4>
+        <p>Post-mortem, atualização de playbooks, report ao comité de risco e CA.</p>
+      </div>
+    </div>
+
+    <h2>Equipa de resposta a incidentes (CSIRT interno)</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Função</th>
+          <th>Responsabilidades</th>
+          <th>Contacto</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Incident Commander (CISO)</td>
+          <td>Coordenação geral, decisões de escalonamento, comunicação com CA</td>
+          <td>24/7 on-call</td>
+        </tr>
+        <tr>
+          <td>SOC Lead</td>
+          <td>Deteção, análise técnica, contenção</td>
+          <td>24/7 SOC</td>
+        </tr>
+        <tr>
+          <td>Eng. Core / Rede</td>
+          <td>Impacto em infraestrutura telecom, isolamento de sistemas</td>
+          <td>On-call</td>
+        </tr>
+        <tr>
+          <td>Jurídico / DPO</td>
+          <td>Obrigações legais, notificação regulatória, RGPD</td>
+          <td>Escalável</td>
+        </tr>
+        <tr>
+          <td>Comunicação</td>
+          <td>Comunicados a clientes, media, regulador</td>
+          <td>Escalável</td>
+        </tr>
+        <tr>
+          <td>Ponto de contacto NIS2</td>
+          <td>Interface com autoridade competente e CSIRT nacional</td>
+          <td>Designado</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Playbooks prioritários telecom</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Playbook</th>
+          <th>Gatilho</th>
+          <th>Ações imediatas</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Ransomware em BSS/OSS</td>
+          <td>EDR alert, ficheiros encriptados</td>
+          <td>Isolar VLAN, desativar contas comprometidas, avaliar backups</td>
+        </tr>
+        <tr>
+          <td>Ataque DDoS</td>
+          <td>Degradação massiva, alertas BGP</td>
+          <td>Ativar scrubbing, contactar upstream, blackhole se necessário</td>
+        </tr>
+        <tr>
+          <td>Fraude SS7/Diameter</td>
+          <td>Tráfego anómalo de sinalização</td>
+          <td>Bloquear origem, notificar parceiros de roaming, preservar logs</td>
+        </tr>
+        <tr>
+          <td>Compromisso de portal cliente</td>
+          <td>WAF alert, dados exfiltrados</td>
+          <td>Isolar app, reset de sessões, notificar DPO</td>
+        </tr>
+        <tr>
+          <td>Insider threat</td>
+          <td>Acesso anómalo a core</td>
+          <td>Revogar acessos, preservar evidências, RH + jurídico</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Integração com CSIRT nacional</h2>
+    <ul>
+      <li>Ponto de contacto NIS2 registado e testado anualmente</li>
+      <li>Canais seguros de comunicação estabelecidos (portal, email cifrado, telefone)</li>
+      <li>Partilha de IOCs e threat intelligence no âmbito legal</li>
+      <li>Participação em exercícios nacionais de cibersegurança</li>
+    </ul>
+
+    <h2>Indicadores de sucesso</h2>
+    <ul class="checklist">
+      <li>SOC 24/7 operacional com cobertura de rede, endpoints e cloud</li>
+      <li>SLA de deteção e escalonamento definidos e monitorizados</li>
+      <li>Notificações dentro dos prazos legais (24h/72h/1 mês)</li>
+      <li>Zero falhas de reporte em auditorias</li>
+      <li>Exercícios tabletop semestrais realizados com CA e jurídico</li>
+      <li>Cadeia de custódia forense documentada</li>
+    </ul>
+
+    <h2>Documentos de apoio</h2>
+    <a href="templates/processo-notificacao-incidentes.html" class="template-link">Template: Processo de Notificação de Incidentes</a>
+  </main>
+
+  <footer>
+    <p><a href="index.html">← Voltar ao início</a></p>
+  </footer>
+  <script src="js/nav.js"></script>
+</body>
+</html>

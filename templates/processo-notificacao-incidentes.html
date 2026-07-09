@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Template — Processo de Notificação de Incidentes</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <a href="../index.html" class="logo">NIS2 Telecom</a>
+      <nav>
+        <ul>
+          <li><a href="../index.html">Início</a></li>
+          <li><a href="../incidentes.html">Incidentes</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <span class="badge">Template · Resposta a Incidentes</span>
+    <h1>Processo de Notificação de Incidentes NIS2</h1>
+    <p class="subtitle">Procedimento operacional para cumprimento dos prazos Art. 23 (24h / 72h / 1 mês)</p>
+
+    <div class="meta-box warning">
+      <strong>Prazos legais</strong>
+      24h — alerta inicial · 72h — notificação detalhada · 1 mês — relatório final
+    </div>
+
+    <h2>1. Contactos de emergência</h2>
+    <table>
+      <thead>
+        <tr><th>Função</th><th>Nome</th><th>Telefone 24/7</th><th>Email</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Incident Commander (CISO)</td><td>[___]</td><td>[___]</td><td>[___]</td></tr>
+        <tr><td>SOC Lead</td><td>[___]</td><td>[___]</td><td>[___]</td></tr>
+        <tr><td>Ponto de contacto NIS2</td><td>[___]</td><td>[___]</td><td>[___]</td></tr>
+        <tr><td>DPO</td><td>[___]</td><td>[___]</td><td>[___]</td></tr>
+        <tr><td>Jurídico</td><td>[___]</td><td>[___]</td><td>[___]</td></tr>
+        <tr><td>Comunicação</td><td>[___]</td><td>[___]</td><td>[___]</td></tr>
+      </tbody>
+    </table>
+
+    <h2>2. Contactos externos</h2>
+    <table>
+      <thead>
+        <tr><th>Entidade</th><th>Contacto</th><th>Canal</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Autoridade NIS2 nacional</td><td>[___]</td><td>[Portal / Email / Tel]</td></tr>
+        <tr><td>CSIRT nacional</td><td>[___]</td><td>[___]</td></tr>
+        <tr><td>ANACOM (regulador telecom)</td><td>[___]</td><td>[___]</td></tr>
+        <tr><td>CNPD (se dados pessoais)</td><td>[___]</td><td>[___]</td></tr>
+      </tbody>
+    </table>
+
+    <h2>3. Critérios de incidente significativo</h2>
+    <p>Marcar todos os critérios aplicáveis para determinar se o incidente é significativo:</p>
+    <ul class="checklist">
+      <li>Interrupção operacional grave ou degradação prolongada de serviços</li>
+      <li>Número significativo de utilizadores afetados (definir limiar: [___] subscritores ou [___]% da base)</li>
+      <li>Acesso não autorizado a sistemas críticos ou dados sensíveis</li>
+      <li>Impacto em outros serviços ou entidades interdependentes</li>
+      <li>Ameaça à segurança nacional ou interesse público</li>
+    </ul>
+
+    <h2>4. Fase 1 — Alerta inicial (≤24h)</h2>
+    <h3>Checklist de ações</h3>
+    <ul class="checklist">
+      <li>Incidente detetado e registado no sistema de ticketing (ID: [___])</li>
+      <li>Incident Commander notificado</li>
+      <li>Avaliação preliminar de significância concluída</li>
+      <li>Se significativo: alerta inicial submetido à autoridade em ≤24h</li>
+      <li>CSIRT nacional notificado (se aplicável)</li>
+      <li>Equipa de resposta ativada</li>
+      <li>Evidências preservadas (logs, snapshots, cadeia de custódia iniciada)</li>
+    </ul>
+
+    <h3>Template — Alerta inicial (24h)</h3>
+    <table>
+      <tbody>
+        <tr><td><strong>Data/hora deteção</strong></td><td>[___]</td></tr>
+        <tr><td><strong>Data/hora alerta</strong></td><td>[___]</td></tr>
+        <tr><td><strong>Entidade notificada</strong></td><td>[Autoridade NIS2 / CSIRT]</td></tr>
+        <tr><td><strong>Referência interna</strong></td><td>[INC-YYYY-NNNN]</td></tr>
+        <tr><td><strong>Descrição sumária</strong></td><td>[Natureza do incidente, sistemas afetados]</td></tr>
+        <tr><td><strong>Indicadores de compromisso</strong></td><td>[IOCs conhecidos, se aplicável]</td></tr>
+        <tr><td><strong>Impacto preliminar</strong></td><td>[Serviços afetados, utilizadores estimados]</td></tr>
+        <tr><td><strong>Medidas iniciais</strong></td><td>[Contenção, isolamento, etc.]</td></tr>
+        <tr><td><strong>Ponto de contacto</strong></td><td>[Nome, telefone, email]</td></tr>
+      </tbody>
+    </table>
+
+    <h2>5. Fase 2 — Notificação detalhada (≤72h)</h2>
+    <h3>Checklist de ações</h3>
+    <ul class="checklist">
+      <li>Análise de impacto atualizada</li>
+      <li>Causa provável identificada (ou em investigação)</li>
+      <li>Notificação detalhada submetida em ≤72h</li>
+      <li>Cross-border notificação avaliada (se impacto noutros Estados-Membros)</li>
+      <li>DPO consultado (se dados pessoais envolvidos)</li>
+      <li>Comunicação interna ao CA se impacto grave</li>
+    </ul>
+
+    <h3>Template — Notificação detalhada (72h)</h3>
+    <table>
+      <tbody>
+        <tr><td><strong>Atualização do alerta inicial</strong></td><td>[Referência INC-YYYY-NNNN]</td></tr>
+        <tr><td><strong>Severidade atualizada</strong></td><td>[Crítica / Alta / Média]</td></tr>
+        <tr><td><strong>Sistemas e serviços afetados</strong></td><td>[Lista detalhada]</td></tr>
+        <tr><td><strong>Utilizadores/serviços afetados</strong></td><td>[Número e tipo]</td></tr>
+        <tr><td><strong>Causa provável</strong></td><td>[Descrição ou "em investigação"]</td></tr>
+        <tr><td><strong>Medidas de mitigação aplicadas</strong></td><td>[Lista]</td></tr>
+        <tr><td><strong>Impacto cross-border</strong></td><td>[Sim/Não — detalhes]</td></tr>
+        <tr><td><strong>Previsão de resolução</strong></td><td>[Estimativa]</td></tr>
+      </tbody>
+    </table>
+
+    <h2>6. Fase 3 — Relatório final (≤1 mês)</h2>
+    <h3>Checklist de ações</h3>
+    <ul class="checklist">
+      <li>Incidente encerrado ou em monitorização pós-recuperação</li>
+      <li>Análise de causa raiz (RCA) concluída</li>
+      <li>Relatório final submetido em ≤1 mês</li>
+      <li>Medidas corretivas e preventivas definidas</li>
+      <li>Lições aprendidas documentadas</li>
+      <li>Post-mortem apresentado ao comité de risco</li>
+      <li>Playbooks atualizados conforme necessário</li>
+    </ul>
+
+    <h3>Template — Relatório final (1 mês)</h3>
+    <table>
+      <tbody>
+        <tr><td><strong>Referência</strong></td><td>[INC-YYYY-NNNN]</td></tr>
+        <tr><td><strong>Data de resolução</strong></td><td>[___]</td></tr>
+        <tr><td><strong>Duração total</strong></td><td>[___ horas/dias]</td></tr>
+        <tr><td><strong>Causa raiz</strong></td><td>[Descrição detalhada]</td></tr>
+        <tr><td><strong>Impacto final</strong></td><td>[Utilizadores, serviços, dados]</td></tr>
+        <tr><td><strong>Medidas corretivas</strong></td><td>[Lista com prazos e owners]</td></tr>
+        <tr><td><strong>Medidas preventivas</strong></td><td>[Lista com prazos e owners]</td></tr>
+        <tr><td><strong>Lições aprendidas</strong></td><td>[Resumo]</td></tr>
+      </tbody>
+    </table>
+
+    <h2>7. Registo de notificações</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Ref.</th>
+          <th>Data deteção</th>
+          <th>24h OK?</th>
+          <th>72h OK?</th>
+          <th>1 mês OK?</th>
+          <th>Significativo?</th>
+          <th>Estado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>[INC-___]</td><td>[___]</td><td>[S/N]</td><td>[S/N]</td><td>[S/N]</td><td>[S/N]</td><td>[Aberto/Fechado]</td></tr>
+      </tbody>
+    </table>
+  </main>
+
+  <footer>
+    <p><a href="../incidentes.html">← Voltar a Incidentes</a></p>
+  </footer>
+</body>
+</html>

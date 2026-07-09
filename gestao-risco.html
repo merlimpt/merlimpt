@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Objetivo 2 — Gestão de Risco | Telecomunicações</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="logo">NIS2 Telecom</a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="governanca.html">Governança</a></li>
+          <li><a href="gestao-risco.html">Gestão de Risco</a></li>
+          <li><a href="continuidade.html">Continuidade</a></li>
+          <li><a href="incidentes.html">Incidentes</a></li>
+          <li><a href="supply-chain.html">Supply Chain</a></li>
+          <li><a href="controlos-tecnicos.html">Controlos Técnicos</a></li>
+          <li><a href="cultura.html">Cultura</a></li>
+          <li><a href="auditoria.html">Auditoria</a></li>
+          <li><a href="integracao.html">Integração</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <span class="badge">Objetivo 2 · Art. 21 NIS2</span>
+    <h1>Gestão de risco cibernético integrada (all-hazards)</h1>
+    <p class="subtitle">Programa de gestão de risco que cubra TI, OT, telecom core e ameaças físicas.</p>
+
+    <div class="meta-box">
+      <strong>Abordagem all-hazards</strong>
+      As medidas devem proteger sistemas de rede e informação e o ambiente físico contra qualquer evento
+      capaz de comprometer disponibilidade, autenticidade, integridade ou confidencialidade de dados e serviços.
+    </div>
+
+    <h2>Inventário de ativos críticos telecom</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Categoria</th>
+          <th>Ativos</th>
+          <th>Criticidade</th>
+          <th>Owner</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Core Network</td>
+          <td>MSC, HLR/HSS, IMS, 5G Core (AMF, SMF, UPF), STP</td>
+          <td>Crítica</td>
+          <td>Eng. Core</td>
+        </tr>
+        <tr>
+          <td>RAN</td>
+          <td>eNodeB, gNodeB, controladores RAN, backhaul</td>
+          <td>Crítica</td>
+          <td>Eng. Rádio</td>
+        </tr>
+        <tr>
+          <td>Sinalização</td>
+          <td>SS7, Diameter, SIGTRAN, gateways de interconexão</td>
+          <td>Crítica</td>
+          <td>Eng. Core</td>
+        </tr>
+        <tr>
+          <td>BSS/OSS</td>
+          <td>CRM, provisioning, billing, mediation</td>
+          <td>Alta</td>
+          <td>IT Ops</td>
+        </tr>
+        <tr>
+          <td>Infraestrutura</td>
+          <td>Data centers, DNS, IXP (se aplicável), NOC/SOC</td>
+          <td>Crítica</td>
+          <td>Infra</td>
+        </tr>
+        <tr>
+          <td>Interfaces expostas</td>
+          <td>Portais cliente, APIs, self-care, apps móveis</td>
+          <td>Alta</td>
+          <td>Digital</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Vetores de risco específicos telecom</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Vetor</th>
+          <th>Descrição</th>
+          <th>Controlos recomendados</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>SS7 / Diameter</td>
+          <td>Interceção, fraude, localização de subscritores</td>
+          <td>Firewalls de sinalização, monitorização anómala, whitelisting</td>
+        </tr>
+        <tr>
+          <td>SIM swap</td>
+          <td>Compromisso de contas via troca fraudulenta de SIM</td>
+          <td>MFA, verificação reforçada, alertas automáticos</td>
+        </tr>
+        <tr>
+          <td>BGP hijacking</td>
+          <td>Desvio de tráfego IP, MITM</td>
+          <td>RPKI, monitorização BGP, prefix filtering</td>
+        </tr>
+        <tr>
+          <td>DDoS</td>
+          <td>Indisponibilidade de serviços e infraestrutura exposta</td>
+          <td>Scrubbing centers, CDN, rate limiting, plano anti-DDoS</td>
+        </tr>
+        <tr>
+          <td>Compromisso de equipamentos</td>
+          <td>Backdoors em firmware de fornecedores de rede</td>
+          <td>Supply chain security, patching, segmentação</td>
+        </tr>
+        <tr>
+          <td>Ransomware</td>
+          <td>Encriptação de BSS/OSS e sistemas de gestão</td>
+          <td>Backups offline, segmentação IT/OT, EDR</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Metodologia de avaliação de risco</h2>
+    <ol>
+      <li><strong>Identificação</strong> — ativos, ameaças, vulnerabilidades (ISO 27005)</li>
+      <li><strong>Análise</strong> — probabilidade × impacto (disponibilidade, integridade, confidencialidade)</li>
+      <li><strong>Avaliação</strong> — comparação com critérios de aceitação definidos pelo CA</li>
+      <li><strong>Tratamento</strong> — mitigar, transferir, aceitar ou evitar</li>
+      <li><strong>Monitorização</strong> — revisão anual ou após alterações significativas</li>
+    </ol>
+
+    <h3>Frameworks de referência</h3>
+    <ul>
+      <li>ISO/IEC 27005 — Gestão de risco de segurança da informação</li>
+      <li>ETSI EN 303 645 — Cibersegurança em produtos IoT/conectados</li>
+      <li>3GPP SA3 — Segurança em redes móveis</li>
+      <li>ENISA — Recomendações para operadores de telecomunicações</li>
+    </ul>
+
+    <h2>Matriz de risco (exemplo)</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Risco</th>
+          <th>Prob.</th>
+          <th>Impacto</th>
+          <th>Nível</th>
+          <th>Tratamento</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Indisponibilidade core 5G</td>
+          <td>Média</td>
+          <td>Crítico</td>
+          <td>Alto</td>
+          <td>Redundância geo, DR testado</td>
+        </tr>
+        <tr>
+          <td>Fraude SS7</td>
+          <td>Média</td>
+          <td>Alto</td>
+          <td>Alto</td>
+          <td>Firewall sinalização, SOC</td>
+        </tr>
+        <tr>
+          <td>Falha fornecedor cloud</td>
+          <td>Baixa</td>
+          <td>Crítico</td>
+          <td>Médio</td>
+          <td>Multi-cloud, exit strategy</td>
+        </tr>
+        <tr>
+          <td>Compromisso portal cliente</td>
+          <td>Alta</td>
+          <td>Médio</td>
+          <td>Alto</td>
+          <td>WAF, pentest, MFA</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Indicadores de sucesso</h2>
+    <ul class="checklist">
+      <li>100% dos ativos críticos inventariados com owner designado</li>
+      <li>Plano de tratamento de riscos com prazos e responsáveis</li>
+      <li>Riscos residuais aceites formalmente pelo CA</li>
+      <li>Revisão de risco anual concluída e documentada</li>
+      <li>Gap analysis NIS2 (10 domínios Art. 21) atualizada</li>
+    </ul>
+
+    <h2>Documentos de apoio</h2>
+    <a href="templates/inventario-ativos-criticos.html" class="template-link">Template: Inventário de Ativos Críticos</a>
+    <a href="templates/matriz-conformidade.html" class="template-link">Template: Matriz de Conformidade</a>
+  </main>
+
+  <footer>
+    <p><a href="index.html">← Voltar ao início</a></p>
+  </footer>
+  <script src="js/nav.js"></script>
+</body>
+</html>

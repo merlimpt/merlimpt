@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Objetivo 7 — Cultura | Telecomunicações</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="logo">NIS2 Telecom</a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="governanca.html">Governança</a></li>
+          <li><a href="gestao-risco.html">Gestão de Risco</a></li>
+          <li><a href="continuidade.html">Continuidade</a></li>
+          <li><a href="incidentes.html">Incidentes</a></li>
+          <li><a href="supply-chain.html">Supply Chain</a></li>
+          <li><a href="controlos-tecnicos.html">Controlos Técnicos</a></li>
+          <li><a href="cultura.html">Cultura</a></li>
+          <li><a href="auditoria.html">Auditoria</a></li>
+          <li><a href="integracao.html">Integração</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <span class="badge">Objetivo 7 · Art. 21(2)(a) NIS2</span>
+    <h1>Cultura, competências e awareness</h1>
+    <p class="subtitle">Reduzir o fator humano como vetor de ataque em operações de alto risco.</p>
+
+    <h2>Programa de formação por função</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Público-alvo</th>
+          <th>Conteúdo</th>
+          <th>Frequência</th>
+          <th>Duração</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Todos os colaboradores</td>
+          <td>Awareness geral, phishing, passwords, reporte de incidentes</td>
+          <td>Anual + microlearning mensal</td>
+          <td>2h/ano</td>
+        </tr>
+        <tr>
+          <td>Engenheiros de rede / Core</td>
+          <td>Segurança SS7/Diameter, hardening, gestão de mudanças</td>
+          <td>Semestral</td>
+          <td>4h</td>
+        </tr>
+        <tr>
+          <td>NOC / SOC</td>
+          <td>Deteção de anomalias, playbooks, escalação</td>
+          <td>Trimestral</td>
+          <td>2h</td>
+        </tr>
+        <tr>
+          <td>Helpdesk / Atendimento</td>
+          <td>SIM swap, engenharia social, verificação de identidade</td>
+          <td>Trimestral</td>
+          <td>2h</td>
+        </tr>
+        <tr>
+          <td>Backoffice / BSS/OSS</td>
+          <td>Proteção de dados, acessos privilegiados, GDPR</td>
+          <td>Anual</td>
+          <td>2h</td>
+        </tr>
+        <tr>
+          <td>Desenvolvedores / DevOps</td>
+          <td>Secure coding, OWASP, CI/CD security, secrets management</td>
+          <td>Semestral</td>
+          <td>4h</td>
+        </tr>
+        <tr>
+          <td>Administração (CA)</td>
+          <td>Responsabilidades NIS2, gestão de crises, accountability</td>
+          <td>Anual</td>
+          <td>4h</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Simulações de phishing</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Campanha</th>
+          <th>Público</th>
+          <th>Frequência</th>
+          <th>Meta de cliques</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Phishing genérico</td>
+          <td>Todos</td>
+          <td>Trimestral</td>
+          <td>&lt; 5%</td>
+        </tr>
+        <tr>
+          <td>Spear phishing direcionado</td>
+          <td>Eng. rede, NOC, financeiro</td>
+          <td>Semestral</td>
+          <td>&lt; 2%</td>
+        </tr>
+        <tr>
+          <td>Vishing (telefone)</td>
+          <td>Helpdesk, atendimento</td>
+          <td>Anual</td>
+          <td>&lt; 3%</td>
+        </tr>
+        <tr>
+          <td>USB drop / físico</td>
+          <td>Aleatório</td>
+          <td>Anual</td>
+          <td>0%</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Políticas de recursos humanos</h2>
+    <ul>
+      <li><strong>Onboarding seguro</strong> — formação obrigatória antes de acesso a sistemas; NDA assinado</li>
+      <li><strong>Offboarding</strong> — revogação de acessos em ≤24h após saída; devolução de equipamentos</li>
+      <li><strong>Controlos para funções críticas</strong> — background check para acesso a core network</li>
+      <li><strong>Política de dispositivos pessoais (BYOD)</strong> — MDM obrigatório ou proibição de acesso a sistemas críticos</li>
+      <li><strong>Reporte de incidentes</strong> — canal anónimo e proteção contra retaliação</li>
+    </ul>
+
+    <h2>Security-by-design em projetos</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Projeto</th>
+          <th>Requisitos de segurança</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Rollout 5G</td>
+          <td>Threat modeling, segmentação, hardening de NFVI, testes de penetração pré-produção</td>
+        </tr>
+        <tr>
+          <td>Migração cloud</td>
+          <td>Arquitetura segura (landing zone), IAM, encriptação, logging centralizado</td>
+        </tr>
+        <tr>
+          <td>SD-WAN</td>
+          <td>Autenticação forte, monitorização de tráfego, políticas de acesso</td>
+        </tr>
+        <tr>
+          <td>Novos portais / apps</td>
+          <td>OWASP ASVS, SAST/DAST no CI/CD, revisão de segurança pré-launch</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Indicadores de sucesso</h2>
+    <ul class="checklist">
+      <li>Taxa de cliques em phishing abaixo da meta definida (&lt;5%)</li>
+      <li>100% colaboradores com funções críticas certificados anualmente</li>
+      <li>100% novos colaboradores concluíram onboarding de segurança</li>
+      <li>Offboarding com revogação de acessos em ≤24h</li>
+      <li>Security review concluído em 100% dos projetos críticos antes de produção</li>
+    </ul>
+  </main>
+
+  <footer>
+    <p><a href="index.html">← Voltar ao início</a></p>
+  </footer>
+  <script src="js/nav.js"></script>
+</body>
+</html>

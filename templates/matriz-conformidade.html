@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Template — Matriz de Conformidade</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <a href="../index.html" class="logo">NIS2 Telecom</a>
+      <nav>
+        <ul>
+          <li><a href="../index.html">Início</a></li>
+          <li><a href="../auditoria.html">Auditoria</a></li>
+          <li><a href="../integracao.html">Integração</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <span class="badge">Template · Auditoria e Integração</span>
+    <h1>Matriz de Conformidade NIS2 Unificada</h1>
+    <p class="subtitle">Mapeamento de controlos NIS2, RGPD, ISO 27001 e evidências</p>
+
+    <h2>Identificação</h2>
+    <table>
+      <tbody>
+        <tr><td><strong>Entidade</strong></td><td>[___]</td></tr>
+        <tr><td><strong>Data da avaliação</strong></td><td>[___]</td></tr>
+        <tr><td><strong>Responsável</strong></td><td>[CISO]</td></tr>
+        <tr><td><strong>Versão</strong></td><td>[___]</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Legenda de maturidade</h2>
+    <table>
+      <thead>
+        <tr><th>Nível</th><th>Designação</th><th>Descrição</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>Inicial</td><td>Ad-hoc, sem documentação</td></tr>
+        <tr><td>2</td><td>Repetível</td><td>Políticas documentadas, implementação parcial</td></tr>
+        <tr><td>3</td><td>Definido</td><td>Processos standardizados</td></tr>
+        <tr><td>4</td><td>Gerido</td><td>Métricas e melhoria contínua</td></tr>
+        <tr><td>5</td><td>Otimizado</td><td>Benchmark sectorial</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Domínios Art. 21 NIS2</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Domínio NIS2</th>
+          <th>ISO 27001</th>
+          <th>RGPD</th>
+          <th>Maturidade (1-5)</th>
+          <th>Evidência</th>
+          <th>Gap / Ação</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Políticas de análise de risco</td>
+          <td>A.5, A.8</td>
+          <td>Art. 32</td>
+          <td>[___]</td>
+          <td>[Inventário, metodologia]</td>
+          <td>[___]</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Tratamento de incidentes</td>
+          <td>A.16</td>
+          <td>Art. 33-34</td>
+          <td>[___]</td>
+          <td>[Playbooks, registos]</td>
+          <td>[___]</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Continuidade e backup</td>
+          <td>A.17</td>
+          <td>Art. 32</td>
+          <td>[___]</td>
+          <td>[BCP/DR, testes]</td>
+          <td>[___]</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Segurança supply chain</td>
+          <td>A.15</td>
+          <td>Art. 28</td>
+          <td>[___]</td>
+          <td>[Contratos, avaliações]</td>
+          <td>[___]</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>Segurança em aquisição/desenvolvimento</td>
+          <td>A.14</td>
+          <td>—</td>
+          <td>[___]</td>
+          <td>[SDLC, change mgmt]</td>
+          <td>[___]</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>Eficácia das medidas</td>
+          <td>A.18</td>
+          <td>—</td>
+          <td>[___]</td>
+          <td>[KPIs, auditorias]</td>
+          <td>[___]</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>Higiene cibernética e formação</td>
+          <td>A.7</td>
+          <td>Art. 32</td>
+          <td>[___]</td>
+          <td>[Registos formação]</td>
+          <td>[___]</td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>Criptografia</td>
+          <td>A.10</td>
+          <td>Art. 32</td>
+          <td>[___]</td>
+          <td>[Política crypto]</td>
+          <td>[___]</td>
+        </tr>
+        <tr>
+          <td>9</td>
+          <td>RH, acessos e ativos</td>
+          <td>A.6, A.9</td>
+          <td>Art. 32</td>
+          <td>[___]</td>
+          <td>[IAM, inventário]</td>
+          <td>[___]</td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td>MFA e comunicações seguras</td>
+          <td>A.9</td>
+          <td>—</td>
+          <td>[___]</td>
+          <td>[Cobertura MFA]</td>
+          <td>[___]</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Requisitos específicos Art. 20 (Governança)</h2>
+    <table>
+      <thead>
+        <tr><th>Requisito</th><th>Conforme?</th><th>Evidência</th><th>Ação</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>CA aprovou medidas de gestão de risco</td><td>[S/N]</td><td>[Ata CA]</td><td>[___]</td></tr>
+        <tr><td>CA supervisiona implementação</td><td>[S/N]</td><td>[Reporting trimestral]</td><td>[___]</td></tr>
+        <tr><td>Formação anual da administração</td><td>[S/N]</td><td>[Registos formação]</td><td>[___]</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Requisitos específicos Art. 23 (Notificação)</h2>
+    <table>
+      <thead>
+        <tr><th>Requisito</th><th>Conforme?</th><th>Evidência</th><th>Ação</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Processo de alerta 24h documentado</td><td>[S/N]</td><td>[Procedimento]</td><td>[___]</td></tr>
+        <tr><td>Processo de notificação 72h</td><td>[S/N]</td><td>[Procedimento]</td><td>[___]</td></tr>
+        <tr><td>Processo de relatório final 1 mês</td><td>[S/N]</td><td>[Procedimento]</td><td>[___]</td></tr>
+        <tr><td>Ponto de contacto registado</td><td>[S/N]</td><td>[Confirmação autoridade]</td><td>[___]</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Resumo executivo</h2>
+    <table>
+      <tbody>
+        <tr><td><strong>Maturidade média (10 domínios)</strong></td><td>[___] / 5</td></tr>
+        <tr><td><strong>Domínios abaixo de Nível 3</strong></td><td>[___]</td></tr>
+        <tr><td><strong>Gaps críticos em aberto</strong></td><td>[___]</td></tr>
+        <tr><td><strong>Próxima auditoria interna</strong></td><td>[___]</td></tr>
+        <tr><td><strong>Próximo pentest</strong></td><td>[___]</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Plano de remediação</h2>
+    <table>
+      <thead>
+        <tr><th>ID</th><th>Gap</th><th>Prioridade</th><th>Ação</th><th>Owner</th><th>Prazo</th><th>Estado</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>GAP-001</td><td>[___]</td><td>[C/A/M]</td><td>[___]</td><td>[___]</td><td>[___]</td><td>[Aberto/Fechado]</td></tr>
+        <tr><td>GAP-002</td><td>[___]</td><td>[C/A/M]</td><td>[___]</td><td>[___]</td><td>[___]</td><td>[Aberto/Fechado]</td></tr>
+        <tr><td>GAP-003</td><td>[___]</td><td>[C/A/M]</td><td>[___]</td><td>[___]</td><td>[___]</td><td>[Aberto/Fechado]</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Aprovação</h2>
+    <table>
+      <tbody>
+        <tr><td><strong>Elaborado por (CISO)</strong></td><td>[___] — [Data]</td></tr>
+        <tr><td><strong>Revisto por (Auditoria Interna)</strong></td><td>[___] — [Data]</td></tr>
+        <tr><td><strong>Apresentado ao CA</strong></td><td>[___] — [Data]</td></tr>
+      </tbody>
+    </table>
+  </main>
+
+  <footer>
+    <p><a href="../auditoria.html">← Voltar a Auditoria</a> · <a href="../integracao.html">Integração Regulatória</a></p>
+  </footer>
+</body>
+</html>

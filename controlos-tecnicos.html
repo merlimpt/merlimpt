@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Objetivo 6 — Controlos Técnicos | Telecomunicações</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="logo">NIS2 Telecom</a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="governanca.html">Governança</a></li>
+          <li><a href="gestao-risco.html">Gestão de Risco</a></li>
+          <li><a href="continuidade.html">Continuidade</a></li>
+          <li><a href="incidentes.html">Incidentes</a></li>
+          <li><a href="supply-chain.html">Supply Chain</a></li>
+          <li><a href="controlos-tecnicos.html">Controlos Técnicos</a></li>
+          <li><a href="cultura.html">Cultura</a></li>
+          <li><a href="auditoria.html">Auditoria</a></li>
+          <li><a href="integracao.html">Integração</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <span class="badge">Objetivo 6 · Art. 21 NIS2</span>
+    <h1>Hardening técnico e controlo de acessos</h1>
+    <p class="subtitle">Implementar controlos técnicos mínimos exigidos pelo Art. 21, adaptados à realidade telecom.</p>
+
+    <h2>Autenticação multifator (MFA)</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Âmbito</th>
+          <th>Requisito</th>
+          <th>Estado alvo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Acessos administrativos a core network</td>
+          <td>MFA obrigatório (hardware token ou FIDO2)</td>
+          <td>100%</td>
+        </tr>
+        <tr>
+          <td>VPN corporativa</td>
+          <td>MFA em todos os acessos</td>
+          <td>100%</td>
+        </tr>
+        <tr>
+          <td>Consolas de gestão de rede (EMS/NMS)</td>
+          <td>MFA + sessão gravada</td>
+          <td>100%</td>
+        </tr>
+        <tr>
+          <td>Cloud (AWS, Azure, GCP)</td>
+          <td>MFA para root/admin, IAM roles</td>
+          <td>100%</td>
+        </tr>
+        <tr>
+          <td>Portais internos (BSS/OSS)</td>
+          <td>MFA para funções privilegiadas</td>
+          <td>100%</td>
+        </tr>
+        <tr>
+          <td>Acessos de fornecedores</td>
+          <td>MFA + just-in-time access</td>
+          <td>100%</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Gestão de identidades e acessos (IAM)</h2>
+    <ul>
+      <li><strong>Provisioning centralizado</strong> — integração com HR para onboarding/offboarding automático</li>
+      <li><strong>Revisão de privilégios</strong> — trimestral para contas admin, semestral para restantes</li>
+      <li><strong>Contas de serviço</strong> — inventariadas, com passwords rotacionadas e sem login interativo</li>
+      <li><strong>Separação de funções</strong> — quem desenvolve não faz deploy em produção</li>
+      <li><strong>Zero credenciais partilhadas</strong> — contas individuais com rastreabilidade</li>
+    </ul>
+
+    <h2>Encriptação</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Dados</th>
+          <th>Em trânsito</th>
+          <th>Em repouso</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Dados de subscritores (PII)</td>
+          <td>TLS 1.2+ / IPSec</td>
+          <td>AES-256</td>
+        </tr>
+        <tr>
+          <td>Sinalização (SS7/Diameter)</td>
+          <td>IPSec / TLS onde suportado</td>
+          <td>N/A</td>
+        </tr>
+        <tr>
+          <td>Backups</td>
+          <td>N/A</td>
+          <td>AES-256, chaves geridas em HSM/KMS</td>
+        </tr>
+        <tr>
+          <td>Comunicações de equipa de crise</td>
+          <td>E2E encrypted (Signal, etc.)</td>
+          <td>N/A</td>
+        </tr>
+        <tr>
+          <td>Logs e telemetria</td>
+          <td>TLS para envio a SIEM</td>
+          <td>Encriptação em storage</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Segmentação de rede</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Zona</th>
+          <th>Sistemas</th>
+          <th>Controlos</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Core Telecom (OT)</td>
+          <td>MSC, HLR, IMS, 5G Core</td>
+          <td>Isolamento físico/lógico, firewall dedicado, sem internet direta</td>
+        </tr>
+        <tr>
+          <td>BSS/OSS (IT)</td>
+          <td>Billing, CRM, provisioning</td>
+          <td>VLAN dedicada, acesso via jump server</td>
+        </tr>
+        <tr>
+          <td>DMZ</td>
+          <td>Portais, APIs, proxies</td>
+          <td>WAF, rate limiting, IDS/IPS</td>
+        </tr>
+        <tr>
+          <td>Corporate IT</td>
+          <td>Estações, email, ERP</td>
+          <td>Segmentação por departamento, EDR</td>
+        </tr>
+        <tr>
+          <td>Cloud</td>
+          <td>Workloads em hyperscaler</td>
+          <td>VPC/VNet isoladas, security groups, microsegmentação</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Higiene cibernética</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Controlos</th>
+          <th>Descrição</th>
+          <th>SLA</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Patch management</td>
+          <td>Atualizações automáticas para OS e apps; janelas para equipamentos de rede</td>
+          <td>Crítico: 72h; Alto: 30d</td>
+        </tr>
+        <tr>
+          <td>Gestão de vulnerabilidades</td>
+          <td>Scanning mensal, priorização por CVSS e exposição</td>
+          <td>Relatório mensal</td>
+        </tr>
+        <tr>
+          <td>Hardening</td>
+          <td>CIS benchmarks para OS; guias de fornecedores para equipamentos de rede</td>
+          <td>Anual</td>
+        </tr>
+        <tr>
+          <td>EDR/XDR</td>
+          <td>Agentes em todos os endpoints corporativos e servidores BSS/OSS</td>
+          <td>100% cobertura</td>
+        </tr>
+        <tr>
+          <td>Desativação de serviços</td>
+          <td>Portas e protocolos desnecessários desativados</td>
+          <td>Contínuo</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Indicadores de sucesso</h2>
+    <ul class="checklist">
+      <li>MFA em 100% dos acessos privilegiados</li>
+      <li>MTTR de patches críticos dentro do SLA definido (≤72h)</li>
+      <li>Zero credenciais partilhadas em produção</li>
+      <li>Revisão de privilégios trimestral concluída e documentada</li>
+      <li>Segmentação IT/OT implementada e testada</li>
+      <li>EDR/XDR com cobertura ≥95% dos endpoints</li>
+    </ul>
+  </main>
+
+  <footer>
+    <p><a href="index.html">← Voltar ao início</a></p>
+  </footer>
+  <script src="js/nav.js"></script>
+</body>
+</html>

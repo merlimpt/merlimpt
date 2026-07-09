@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Template — Plano BCP/DR</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <a href="../index.html" class="logo">NIS2 Telecom</a>
+      <nav>
+        <ul>
+          <li><a href="../index.html">Início</a></li>
+          <li><a href="../continuidade.html">Continuidade</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <span class="badge">Template · Continuidade de Negócio</span>
+    <h1>Plano de Continuidade de Negócio e Recuperação de Desastres</h1>
+    <p class="subtitle">BCP/DR para sistemas críticos telecom (Art. 21(2)(c) NIS2)</p>
+
+    <h2>1. Identificação</h2>
+    <table>
+      <tbody>
+        <tr><td><strong>Entidade</strong></td><td>[___]</td></tr>
+        <tr><td><strong>Versão</strong></td><td>[___]</td></tr>
+        <tr><td><strong>Responsável BCP</strong></td><td>[___]</td></tr>
+        <tr><td><strong>Última atualização</strong></td><td>[___]</td></tr>
+        <tr><td><strong>Próximo teste</strong></td><td>[___]</td></tr>
+      </tbody>
+    </table>
+
+    <h2>2. Objetivos de recuperação</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Serviço / Sistema</th>
+          <th>RTO</th>
+          <th>RPO</th>
+          <th>Prioridade</th>
+          <th>Site alternativo</th>
+          <th>Owner</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Core Network (voz/dados)</td><td>≤ 4h</td><td>≤ 15 min</td><td>P1</td><td>[DC Secundário]</td><td>[___]</td></tr>
+        <tr><td>5G Core (SA/NSA)</td><td>≤ 4h</td><td>≤ 15 min</td><td>P1</td><td>[NFVI Standby]</td><td>[___]</td></tr>
+        <tr><td>BSS — Billing</td><td>≤ 8h</td><td>≤ 1h</td><td>P2</td><td>[Warm Standby]</td><td>[___]</td></tr>
+        <tr><td>OSS — Provisioning</td><td>≤ 8h</td><td>≤ 1h</td><td>P2</td><td>[Warm Standby]</td><td>[___]</td></tr>
+        <tr><td>DNS Autoritativo</td><td>≤ 1h</td><td>0</td><td>P1</td><td>[Anycast multi-site]</td><td>[___]</td></tr>
+        <tr><td>Portais cliente</td><td>≤ 2h</td><td>≤ 30 min</td><td>P2</td><td>[Cloud multi-AZ]</td><td>[___]</td></tr>
+        <tr><td>NOC / SOC</td><td>≤ 1h</td><td>N/A</td><td>P1</td><td>[Sala crise alt.]</td><td>[___]</td></tr>
+      </tbody>
+    </table>
+
+    <h2>3. Equipa de crise BCP</h2>
+    <table>
+      <thead>
+        <tr><th>Função</th><th>Nome</th><th>Contacto 24/7</th><th>Substituto</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Crisis Manager (CISO)</td><td>[___]</td><td>[___]</td><td>[___]</td></tr>
+        <tr><td>Eng. Core Lead</td><td>[___]</td><td>[___]</td><td>[___]</td></tr>
+        <tr><td>Infra / DC Lead</td><td>[___]</td><td>[___]</td><td>[___]</td></tr>
+        <tr><td>IT Ops Lead</td><td>[___]</td><td>[___]</td><td>[___]</td></tr>
+        <tr><td>Comunicação</td><td>[___]</td><td>[___]</td><td>[___]</td></tr>
+        <tr><td>Jurídico / Regulatório</td><td>[___]</td><td>[___]</td><td>[___]</td></tr>
+      </tbody>
+    </table>
+
+    <h2>4. Procedimentos por cenário</h2>
+
+    <h3>Cenário A — Ransomware em BSS/OSS</h3>
+    <ol>
+      <li>Isolar VLAN afetada (owner: [___], tempo: ≤15 min)</li>
+      <li>Desativar contas comprometidas (owner: [___])</li>
+      <li>Avaliar integridade de backups offline (owner: [___])</li>
+      <li>Ativar modo degradado: [descrever serviços mínimos]</li>
+      <li>Notificar CISO e iniciar processo de incidente NIS2</li>
+      <li>Restaurar de backup após validação forense</li>
+      <li>Comunicar a clientes se impacto &gt; [___] horas</li>
+    </ol>
+
+    <h3>Cenário B — Destruição de datacenter primário</h3>
+    <ol>
+      <li>Confirmar indisponibilidade total do site [___]</li>
+      <li>Ativar Crisis Manager e equipa BCP</li>
+      <li>Iniciar failover automático/manual para DC secundário [___]</li>
+      <li>Validar serviços core em ≤4h (RTO)</li>
+      <li>Notificar regulador se interrupção &gt; limiar definido</li>
+      <li>Comunicação pública conforme plano de crise</li>
+    </ol>
+
+    <h3>Cenário C — Falha de fornecedor cloud</h3>
+    <ol>
+      <li>Confirmar scope da indisponibilidade (região/AZ: [___])</li>
+      <li>Ativar failover para região alternativa [___]</li>
+      <li>Validar portais e APIs em ≤2h</li>
+      <li>Contactar suporte fornecedor (ticket prioritário)</li>
+      <li>Comunicar a clientes digitais se &gt; [___] min</li>
+    </ol>
+
+    <h3>Cenário D — Ataque DDoS massivo</h3>
+    <ol>
+      <li>Ativar scrubbing center / CDN protection</li>
+      <li>Contactar upstream providers: [___]</li>
+      <li>Aplicar blackhole temporário se necessário</li>
+      <li>Monitorizar serviços core (não devem ser afetados)</li>
+      <li>Escalar com CSIRT se ataque persistente</li>
+    </ol>
+
+    <h2>5. Estratégia de backups</h2>
+    <table>
+      <thead>
+        <tr><th>Sistema</th><th>Frequência</th><th>Retenção</th><th>Localização</th><th>Teste restauro</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>BSS/OSS DB</td><td>Diário + contínuo</td><td>90 dias</td><td>Offline + cloud</td><td>Trimestral</td></tr>
+        <tr><td>Core configs</td><td>Diário</td><td>365 dias</td><td>Geo-redundante</td><td>Semestral</td></tr>
+        <tr><td>DNS zones</td><td>Contínuo</td><td>30 dias</td><td>Multi-site</td><td>Mensal</td></tr>
+        <tr><td>Logs / SIEM</td><td>Contínuo</td><td>1 ano</td><td>Cloud imutável</td><td>Anual</td></tr>
+      </tbody>
+    </table>
+
+    <h2>6. Calendário de testes</h2>
+    <table>
+      <thead>
+        <tr><th>Teste</th><th>Último</th><th>Próximo</th><th>Resultado</th><th>Ações</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Failover core network</td><td>[___]</td><td>[___]</td><td>[Pass/Fail]</td><td>[___]</td></tr>
+        <tr><td>DR datacenter completo</td><td>[___]</td><td>[___]</td><td>[Pass/Fail]</td><td>[___]</td></tr>
+        <tr><td>Restauro BSS/OSS</td><td>[___]</td><td>[___]</td><td>[Pass/Fail]</td><td>[___]</td></tr>
+        <tr><td>Teste backups aleatório</td><td>[___]</td><td>[___]</td><td>[Pass/Fail]</td><td>[___]</td></tr>
+        <tr><td>Exercício crise integrado</td><td>[___]</td><td>[___]</td><td>[Pass/Fail]</td><td>[___]</td></tr>
+      </tbody>
+    </table>
+
+    <h2>7. Comunicação de crise</h2>
+    <table>
+      <thead>
+        <tr><th>Audiência</th><th>Canal</th><th>Responsável</th><th>Template</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Colaboradores</td><td>Email / Teams</td><td>[___]</td><td>[BCP-INT-01]</td></tr>
+        <tr><td>Clientes</td><td>SMS / Portal / Media</td><td>[___]</td><td>[BCP-EXT-01]</td></tr>
+        <tr><td>Regulador (ANACOM)</td><td>Portal regulatório</td><td>[___]</td><td>[BCP-REG-01]</td></tr>
+        <tr><td>Autoridade NIS2</td><td>Portal NIS2</td><td>[___]</td><td>[Ver processo incidentes]</td></tr>
+        <tr><td>Parceiros roaming</td><td>Email seguro</td><td>[___]</td><td>[BCP-PAR-01]</td></tr>
+      </tbody>
+    </table>
+
+    <h2>8. Aprovação e revisão</h2>
+    <table>
+      <tbody>
+        <tr><td><strong>Elaborado por</strong></td><td>[___] — [Data]</td></tr>
+        <tr><td><strong>Revisto por</strong></td><td>[___] — [Data]</td></tr>
+        <tr><td><strong>Aprovado por (CA)</strong></td><td>[___] — [Data]</td></tr>
+      </tbody>
+    </table>
+  </main>
+
+  <footer>
+    <p><a href="../continuidade.html">← Voltar a Continuidade</a></p>
+  </footer>
+</body>
+</html>

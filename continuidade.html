@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Objetivo 3 — Continuidade | Telecomunicações</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="logo">NIS2 Telecom</a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="governanca.html">Governança</a></li>
+          <li><a href="gestao-risco.html">Gestão de Risco</a></li>
+          <li><a href="continuidade.html">Continuidade</a></li>
+          <li><a href="incidentes.html">Incidentes</a></li>
+          <li><a href="supply-chain.html">Supply Chain</a></li>
+          <li><a href="controlos-tecnicos.html">Controlos Técnicos</a></li>
+          <li><a href="cultura.html">Cultura</a></li>
+          <li><a href="auditoria.html">Auditoria</a></li>
+          <li><a href="integracao.html">Integração</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <span class="badge">Objetivo 3 · Art. 21 NIS2</span>
+    <h1>Resiliência operacional e continuidade de serviço</h1>
+    <p class="subtitle">Assegurar disponibilidade dos serviços de comunicações eletrónicas face a incidentes cibernéticos e físicos.</p>
+
+    <h2>Objetivos de recuperação por serviço</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Serviço / Sistema</th>
+          <th>RTO</th>
+          <th>RPO</th>
+          <th>Site alternativo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Core Network (voz/dados)</td>
+          <td>≤ 4 horas</td>
+          <td>≤ 15 min</td>
+          <td>DC secundário geo-redundante</td>
+        </tr>
+        <tr>
+          <td>5G Core (SA/NSA)</td>
+          <td>≤ 4 horas</td>
+          <td>≤ 15 min</td>
+          <td>NFVI standby</td>
+        </tr>
+        <tr>
+          <td>BSS — Billing</td>
+          <td>≤ 8 horas</td>
+          <td>≤ 1 hora</td>
+          <td>Warm standby</td>
+        </tr>
+        <tr>
+          <td>OSS — Provisioning</td>
+          <td>≤ 8 horas</td>
+          <td>≤ 1 hora</td>
+          <td>Warm standby</td>
+        </tr>
+        <tr>
+          <td>DNS / Autoritativo</td>
+          <td>≤ 1 hora</td>
+          <td>0 (sincrono)</td>
+          <td>Anycast multi-site</td>
+        </tr>
+        <tr>
+          <td>Portais cliente / Self-care</td>
+          <td>≤ 2 horas</td>
+          <td>≤ 30 min</td>
+          <td>Cloud multi-AZ</td>
+        </tr>
+        <tr>
+          <td>NOC / SOC</td>
+          <td>≤ 1 hora</td>
+          <td>N/A</td>
+          <td>Sala de crise alternativa</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Cenários de continuidade</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Cenário</th>
+          <th>Impacto</th>
+          <th>Procedimento</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Ransomware em BSS/OSS</td>
+          <td>Billing e provisioning indisponíveis</td>
+          <td>Isolar segmento, restaurar de backup offline, ativar modo degradado</td>
+        </tr>
+        <tr>
+          <td>Destruição de datacenter primário</td>
+          <td>Core e serviços críticos offline</td>
+          <td>Failover automático para DC secundário, ativar equipa de crise</td>
+        </tr>
+        <tr>
+          <td>Falha de fornecedor cloud</td>
+          <td>Serviços digitais indisponíveis</td>
+          <td>Failover para região/AZ alternativa, comunicar a clientes</td>
+        </tr>
+        <tr>
+          <td>Ataque DDoS massivo</td>
+          <td>Degradação de conectividade</td>
+          <td>Ativar scrubbing, blackhole temporário, escalar com upstream</td>
+        </tr>
+        <tr>
+          <td>Corte de energia prolongado</td>
+          <td>Equipamentos em site afetado</td>
+          <td>Geradores, UPS, redistribuição de carga</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Calendário de testes</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Teste</th>
+          <th>Frequência</th>
+          <th>Âmbito</th>
+          <th>Responsável</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Failover core network</td>
+          <td>Semestral</td>
+          <td>MSC, IMS, 5G Core</td>
+          <td>Eng. Core</td>
+        </tr>
+        <tr>
+          <td>Restauro BSS/OSS</td>
+          <td>Anual</td>
+          <td>Billing, CRM, provisioning</td>
+          <td>IT Ops</td>
+        </tr>
+        <tr>
+          <td>DR de datacenter</td>
+          <td>Anual</td>
+          <td>Full site failover</td>
+          <td>Infra</td>
+        </tr>
+        <tr>
+          <td>Teste de backups</td>
+          <td>Trimestral</td>
+          <td>Restauro aleatório de sistemas críticos</td>
+          <td>Infra + App owners</td>
+        </tr>
+        <tr>
+          <td>Exercício de crise integrado</td>
+          <td>Semestral</td>
+          <td>BCP + comunicação + regulador</td>
+          <td>CISO</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Requisitos de redundância</h2>
+    <ul>
+      <li>Redundância geográfica para todos os sistemas classificados como críticos</li>
+      <li>Segmentação de rede para limitar propagação lateral em caso de compromisso</li>
+      <li>Backups imutáveis (air-gapped ou WORM) para sistemas BSS/OSS</li>
+      <li>Links internacionais com diversidade de rotas e fornecedores</li>
+      <li>Integração do BCP com plano de gestão de crises e comunicação externa</li>
+    </ul>
+
+    <h2>Indicadores de sucesso</h2>
+    <ul class="checklist">
+      <li>Testes DR anuais realizados com resultados documentados</li>
+      <li>RTO/RPO cumpridos nos exercícios de failover</li>
+      <li>Planos BCP/DR atualizados após cada teste ou incidente significativo</li>
+      <li>Procedimentos de emergência documentados e acessíveis 24/7</li>
+      <li>Comunicação com regulador e clientes integrada no plano de crise</li>
+    </ul>
+
+    <h2>Documentos de apoio</h2>
+    <a href="templates/plano-bcp-dr.html" class="template-link">Template: Plano BCP/DR</a>
+  </main>
+
+  <footer>
+    <p><a href="index.html">← Voltar ao início</a></p>
+  </footer>
+  <script src="js/nav.js"></script>
+</body>
+</html>
